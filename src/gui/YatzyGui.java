@@ -40,7 +40,7 @@ public class YatzyGui extends Application {
     private void initContent(GridPane pane) {
 
         //Show grid
-        pane.setGridLinesVisible(false);
+        pane.setGridLinesVisible(true);
         pane.setPadding(new Insets(20));
 
         // Create a top and bottom section of the UI
@@ -93,9 +93,13 @@ public class YatzyGui extends Application {
 
         // Create label of single die
         for (int i = 0; i < 6; i++) {
+            Button choose = new Button("Vælg");
+
             Label onesLabel = new Label(i + 1 + "'ere");
             GridPane.setMargin(onesLabel, new Insets(margin));
             botPane.add(onesLabel, 0, i);
+            botPane.add(choose,2,i);
+
 
 
             TextField onesField = new TextField();
@@ -127,6 +131,8 @@ public class YatzyGui extends Application {
 
         String[] pairName = {"et par", "to par", "3 ens", "4 ens", "lille straight", "Store straight", "Fuldt hus", "Chance", "Yatzy"};
         for (int i = 0; i < 9; i++) {
+            Button choose = new Button("Vælg");
+
             Label pairLebel = new Label(pairName[i]);
             GridPane.setMargin(pairLebel, new Insets(margin));
 
@@ -136,6 +142,7 @@ public class YatzyGui extends Application {
             txtFieldPair.setPrefWidth(50);
             botPane.add(pairLebel, 0, i + 8);
             botPane.add(txtFieldPair, 1, i + 8);
+            botPane.add(choose,2,i+8);
 
         }
 
